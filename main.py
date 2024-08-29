@@ -90,7 +90,8 @@ def main():
         humanCorrect = 0 
         botCorrect = 0 
         storyTellerSuccess = 0 
-        print(" XXXXXX temp test XXXXXX")
+        print("displays what everyone picked for sanity check")
+        print(table[0])
         print(votes[0])
         print(correctIndex)
         print(votes[1])
