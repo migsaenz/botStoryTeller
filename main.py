@@ -90,10 +90,14 @@ def main():
         humanCorrect = 0 
         botCorrect = 0 
         storyTellerSuccess = 0 
-        print("displays what everyone picked for sanity check")
-        print(table[0])
+        print("\n...displays what everyone picked for sanity check...")
+        print("\n storybot picked")
+        print(storyBot.storyteller_card)
+        print("\n guessbot picked")
         print(votes[0])
+        print("\n index of storybot card")
         print(correctIndex)
+        print ("\n index of human guess")
         print(votes[1])
         if (votes[0] == storyBot.storyteller_card):
             botCorrect = 1
