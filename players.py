@@ -8,6 +8,7 @@ from generate_image_caption import ImageCaptionGenerator
 from abstractor import Abstractor
 from text_processor import TextProcessor
 from similarity import ImageTextSimilarity
+from PIL import Image
 
 logger = logging.getLogger('game_logic')
 
@@ -76,6 +77,9 @@ class Human(Player):
         print("Cards on the table:")
         for index, (card) in enumerate(table):
             print(f"{index + 1}: {card}")
+            image_path = card
+            cur_image = Image.open(image_path)
+            cur_image.show()
 
         while True:
             try:
@@ -110,7 +114,7 @@ class Bot(Player):
     def generate_clue(self, card: str) -> str:
         caption = ""
         with open("cache.csv", "r") as f:
-            reader = csv.reader(f)
+            reader = csv.reader(f) 
             for row in reader:
                 cur_card = row[0].strip()
                 description = row[1].strip()
